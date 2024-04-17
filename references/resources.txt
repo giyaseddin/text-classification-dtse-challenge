@@ -1,0 +1,4 @@
+- Bayrak, G., Toprak, M. Ş., Ganiz, M. C., Kodaz, H., & Koç, U. (2022). Deep learning-based brain hemorrhage detection in ct reports. In Challenges of Trustable AI and Added-Value on Health (pp. 866-867). IOS Press.
+- Akça, O., Bayrak, G., Issifu, A. M., & Ganіz, M. C. (2022, August). Traditional machine learning and deep learning-based text classification for turkish law documents using transformers and domain adaptation. In 2022 International Conference on INnovations in Intelligent SysTems and Applications (INISTA) (pp. 1-6). IEEE.
+- https://github.com/giyaseddin/fake-user-detetion
+- https://huggingface.co/Giyaseddin/distilbert-base-cased-finetuned-fake-and-real-news-dataset
