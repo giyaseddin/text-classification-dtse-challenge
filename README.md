@@ -161,6 +161,7 @@ Efforts to further improve the model will focus on the following technical objec
 - [ ] **Utilize Data Augmentation**: Increase training data variety to enhance model robustness.
 - [ ] **Integrate Multi-Modal Data**: Incorporate different data types for a more comprehensive analysis.
 - [ ] **Apply Domain Adaptation Techniques**: Adapt the model to perform well across varying data distributions.
+- [ ] **Serving and Deployment**: The MLOps part of the model continuous modelling, evaluation, monitoring and iterating is important aspect in shipped ML model applications.
 
 These steps are designed to refine the model’s predictive capabilities and ensure its practical applicability across different scenarios.
 
