@@ -136,6 +136,10 @@ The results demonstrate that models employing sentence transformers generally ou
 
 **Note:** There are more experiments done, but failing ones weren't reported or shared.
 
+
+### Test set
+The predictions are extracted from the best performing model (according to the table above) and can be found and downloaded from here [test set predictions](reports/best_model_test_preds.csv)
+
 ## Discussion
 The experiments reveal that advanced NLP techniques, especially those using sentence transformers and BERT fine-tuning, consistently deliver superior F1 scores. This underscores their capacity to effectively manage the complexities associated with multi-label text classification. Notably, the LightGBM model augmented with sentence transformer embeddings proved especially effective, achieving the highest F1 score of 0.84 for environmental issues. These findings highlight the crucial role that cutting-edge NLP technologies play in addressing common challenges such as class imbalance and in boosting the overall performance of classification models.
 
