@@ -51,6 +51,7 @@ def save_experiment_results(y_true_valid, y_pred_valid, label_names, experiment_
 
     # Classification Report for validation set
     report = classification_report(y_true_valid, y_pred_valid, target_names=label_names, output_dict=True)
+    print(classification_report(y_true_valid, y_pred_valid, target_names=label_names))
     with open(reports_dir / 'clf_report.json', 'w') as f:
         json.dump(report, f, indent=4)
 
@@ -64,5 +65,32 @@ def save_experiment_results(y_true_valid, y_pred_valid, label_names, experiment_
         plt.title(f'Confusion Matrix for {label}')
         plt.savefig(reports_dir / f"{label}_confusion_matrix.png")
         plt.close()
+
+    # Plot ROC-AUC curves for each label
+    fpr = dict()
+    tpr = dict()
+    roc_auc = dict()
+    for i, label in enumerate(label_names):
+        fpr[i], tpr[i], _ = roc_curve(y_true_valid[:, i], y_pred_valid[:, i])
+        roc_auc[i] = auc(fpr[i], tpr[i])
+
+    plt.figure(figsize=(8, 6))
+    colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
+    for i, color in zip(range(len(label_names)), colors):
+        plt.plot(fpr[i], tpr[i], color=color, lw=2,
+                 label=f'ROC curve of {label_names[i]} (area = {roc_auc[i]:.2f})')
+    plt.plot([0, 1], [0, 1], 'k--', lw=2)
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.savefig(reports_dir / "roc_auc_curve.png")
+    plt.close()
+
+    # Save ROC-AUC scores
+    with open(reports_dir / "roc_auc_scores.json", 'w') as f:
+        json.dump(roc_auc, f, indent=4)
 
     print("All reports and plots have been generated and saved successfully.")
