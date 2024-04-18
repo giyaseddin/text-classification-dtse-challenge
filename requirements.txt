@@ -24,3 +24,4 @@ torchaudio
 setfit
 accelerate
 imbalanced-learn
+tabulate
