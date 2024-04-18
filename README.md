@@ -116,11 +116,6 @@ The results are presented as macro averages of precision, recall, and F1-score f
 | svc-bge-small-upsampled-dataset-default-prob                          |                      **0.672** |                  **0.801** |                          0.814 |
 
 
-```shell
-python src/reporting/compile_experiment_report.py
-```
-
-
 ### Cyber Security Class Results Table
 | Experiment                                                            |   Precision |   Recall |   F1_Score |
 |:----------------------------------------------------------------------|------------:|---------:|-----------:|
@@ -166,6 +161,32 @@ This tabulated data provides a clear and concise comparison of model performance
 The results demonstrate that models employing sentence transformers generally outperform those using tf-idf vectorization, with notable improvements in both precision and recall, particularly for environmental issues.
 
 **Note:** There are more experiments done, but failing ones weren't reported or shared.
+
+
+The script used to produce these result tables can rerun with 
+
+```shell
+python src/reporting/compile_experiment_report.py
+```
+
+### Metrics
+
+In text classification, especially multi-label classification, precision, recall, and F1-score are crucial for evaluating model performance:
+
+- **Precision** measures the accuracy of positive predictions—important when false positives are costly, e.g., marking important emails as spam.
+
+- **Recall** (Sensitivity) assesses the model's ability to identify all relevant instances. It is critical where missing a positive instance has significant consequences, such as failing to identify a document with crucial information.
+
+- **F1-Score** is the harmonic mean of precision and recall, providing a balance between them. It's particularly useful in scenarios with imbalanced classes, where accuracy alone can be misleading.
+
+
+**🏳 Important:** Depending on the importance of the labels provided in the dataset, namely `cyber security` or not and `environmental issue` or not, given that consideration, one of these metrics will gain importance to maximize on the way to find the best model.
+
+#### Importance in Multi-label Classification
+In multi-label scenarios, metrics are calculated for each label independently and then averaged (macro-average) or weighted by label frequency (micro-average). This approach ensures comprehensive performance assessment across all labels, highlighting the model's effectiveness and areas needing improvement.
+
+#### Why Focus on Recall and F1-Score?
+Recall and F1-score are emphasized both overall and per label to ensure the model effectively identifies most positive instances while maintaining a balance between not missing critical labels (high recall) and minimizing incorrect label assignments (high F1-score). This dual focus helps in tuning the model to perform well across diverse and possibly imbalanced datasets.
 
 
 ### Test set
