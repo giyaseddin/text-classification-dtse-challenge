@@ -1,0 +1,38 @@
+{
+    "cyber_label": {
+        "precision": 0.5454545454545454,
+        "recall": 0.7058823529411765,
+        "f1-score": 0.6153846153846154,
+        "support": 17.0
+    },
+    "environmental_issue": {
+        "precision": 0.6212121212121212,
+        "recall": 0.7884615384615384,
+        "f1-score": 0.6949152542372882,
+        "support": 52.0
+    },
+    "micro avg": {
+        "precision": 0.6022727272727273,
+        "recall": 0.7681159420289855,
+        "f1-score": 0.6751592356687898,
+        "support": 69.0
+    },
+    "macro avg": {
+        "precision": 0.5833333333333333,
+        "recall": 0.7471719457013575,
+        "f1-score": 0.6551499348109517,
+        "support": 69.0
+    },
+    "weighted avg": {
+        "precision": 0.6025472112428635,
+        "recall": 0.7681159420289855,
+        "f1-score": 0.6753207490127165,
+        "support": 69.0
+    },
+    "samples avg": {
+        "precision": 0.1984126984126984,
+        "recall": 0.20436507936507936,
+        "f1-score": 0.1997354497354497,
+        "support": 69.0
+    }
+}
