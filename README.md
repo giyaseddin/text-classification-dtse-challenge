@@ -97,7 +97,7 @@ The development of the classification models involved a series of structured ste
 The results are presented as macro averages of precision, recall, and F1-score for each model and experiment. Here's a detailed breakdown:
 
 
-| Experiment                                                            | Overall_F1_Score<br/> (mutual) |   Cyber_Label_F1_Score |   Environmental_Issue_F1_Score |
+| Experiment                                                            | Overall_F1_Score<br/> (mutual) |   Cyber_Label<br/>F1_Score |   Environmental_Issue<br/>F1_Score |
 |:----------------------------------------------------------------------|---------------------------:|-----------------------:|-------------------------------:|
 | lightgbm-bge-small-cleaned-dataset-class-weight-balanced              |                      0.630 |                  0.746 |                          0.840 |
 | lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-100estm |                      0.589 |                  0.706 |                          0.833 |
