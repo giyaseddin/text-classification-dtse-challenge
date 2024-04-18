@@ -95,41 +95,70 @@ The development of the classification models involved a series of structured ste
 
 ## Results
 The results are presented as macro averages of precision, recall, and F1-score for each model and experiment. Here's a detailed breakdown:
+
+
+| Experiment                                                            | Overall_F1_Score<br/> (mutual) |   Cyber_Label_F1_Score |   Environmental_Issue_F1_Score |
+|:----------------------------------------------------------------------|---------------------------:|-----------------------:|-------------------------------:|
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced              |                      0.630 |                  0.746 |                          0.840 |
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-100estm |                      0.589 |                  0.706 |                          0.833 |
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-400estm |                      0.608 |                  0.738 |                          0.825 |
+| lightgbm-bge-small-default                                            |                      0.588 |                  0.726 |                          0.816 |
+| lightgbm-bge-small-upsampled-dataset-default                          |                      0.572 |                  0.684 |                          **0.843** |
+| lightgbm-tfidf-class-weight-balanced                                  |                      0.599 |                  0.779 |                          0.760 |
+| lightgbm-tfidf-class-weight-balanced-dart                             |                      0.513 |                  0.724 |                          0.724 |
+| lightgbm-tfidf-class-weight-balanced-high-lr                          |                      0.600 |                  0.777 |                          0.764 |
+| lightgbm-tfidf-default                                                |                      0.494 |                  0.726 |                          0.704 |
+| lr-bge-small-upsampled-dataset-default                                |                      0.566 |                  0.689 |                          0.791 |
+| rf-bge-small-upsampled-dataset-default                                |                      0.372 |                  0.590 |                          0.726 |
+| svc-bge-small-cleaned-dataset-default-prob                            |                      0.587 |                  0.738 |                          0.804 |
+| svc-bge-small-upsampled-dataset-c0.5                                  |                      0.608 |                  0.744 |                          0.792 |
+| svc-bge-small-upsampled-dataset-c0.8                                  |                      0.655 |                  0.792 |                          0.801 |
+| svc-bge-small-upsampled-dataset-default-prob                          |                      **0.672** |                  **0.801** |                          0.814 |
+
+
+```shell
+python src/reporting/compile_experiment_report.py
+```
+
+
 ### Cyber Security Class Results Table
-| Notebook/Experiment                          | Precision | Recall | F1-Score |
-|----------------------------------------------|-----------|--------|----------|
-| **initial-exploratory-experiment.ipynb**     |           |        |          |
-| Exp1                                         | 0.73      | 0.76   | 0.74     |
-| Exp2                                         | 0.74      | 0.70   | 0.72     |
-| **sklearn-sentence-transformer.ipynb**       |           |        |          |
-| Exp1                                         | 0.77      | **0.83**| **0.80** |
-| Exp2                                         | 0.76      | **0.83**| 0.79     |
-| **lightgbm-sentence-transformer.ipynb**      |           |        |          |
-| Exp1                                         | **0.83**  | 0.70   | 0.75     |
-| **lightgbm-tfidf.ipynb**                     |           |        |          |
-| Exp1                                         | 0.80      | 0.75   | 0.78     |
-| **setfit-text-classification_multilabel_full.ipynb** |    |        |          |
-| Exp1                                         | 0.73      | 0.75   | 0.74     |
-| **BERT-ft.ipynb**                            |           |        |          |
-| Exp1                                         | 0.78      | 0.78   | 0.78     |
+| Experiment                                                            |   Precision |   Recall |   F1_Score |
+|:----------------------------------------------------------------------|------------:|---------:|-----------:|
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced              |       0.829 |    0.699 |      0.746 |
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-100estm |       0.777 |    0.668 |      0.706 |
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-400estm |       0.906 |    0.674 |      0.738 |
+| lightgbm-bge-small-default                                            |       0.852 |    0.672 |      0.726 |
+| lightgbm-bge-small-upsampled-dataset-default                          |       0.788 |    0.641 |      0.684 |
+| lightgbm-tfidf-class-weight-balanced                                  |       0.779 |    0.779 |      0.779 |
+| lightgbm-tfidf-class-weight-balanced-dart                             |       0.731 |    0.718 |      0.724 |
+| lightgbm-tfidf-class-weight-balanced-high-lr                          |       0.805 |    0.754 |      0.777 |
+| lightgbm-tfidf-default                                                |       0.771 |    0.695 |      0.726 |
+| lr-bge-small-upsampled-dataset-default                                |       0.651 |    0.800 |      0.689 |
+| rf-bge-small-upsampled-dataset-default                                |       **0.970** |    0.559 |      0.590 |
+| svc-bge-small-cleaned-dataset-default-prob                            |       0.906 |    0.674 |      0.738 |
+| svc-bge-small-upsampled-dataset-c0.5                                  |       0.703 |    0.819 |      0.744 |
+| svc-bge-small-upsampled-dataset-c0.8                                  |       0.762 |    0.832 |      0.792 |
+| svc-bge-small-upsampled-dataset-default-prob                          |       0.775 |    **0.834** |      **0.801** |
+
 
 ### Environmental Issue Class Results Table
-| Notebook/Experiment                          | Precision | Recall | F1-Score |
-|----------------------------------------------|-----------|--------|----------|
-| **initial-exploratory-experiment.ipynb**     |           |        |          |
-| Exp1                                         | 0.77      | 0.76   | 0.76     |
-| Exp2                                         | 0.75      | 0.73   | 0.74     |
-| **sklearn-sentence-transformer.ipynb**       |           |        |          |
-| Exp1                                         | 0.80      | **0.84**   | 0.81     |
-| Exp2                                         | 0.78      | 0.83   | 0.80     |
-| **lightgbm-sentence-transformer.ipynb**      |           |        |          |
-| Exp1                                         | **0.86**  | 0.82   | **0.84** |
-| **lightgbm-tfidf.ipynb**                     |           |        |          |
-| Exp1                                         | 0.78      | 0.75   | 0.76     |
-| **setfit-text-classification_multilabel_full.ipynb** |    |        |          |
-| Exp1                                         | 0.80      | 0.82   | 0.81     |
-| **BERT-ft.ipynb**                            |           |        |          |
-| Exp1                                         | 0.80      | 0.83   | 0.81     |
+| Experiment                                                            |   Precision |   Recall |   F1_Score |
+|:----------------------------------------------------------------------|------------:|---------:|-----------:|
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced              |       0.861 |    0.824 |      0.840 |
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-100estm |       0.841 |    0.826 |      0.833 |
+| lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-400estm |       0.852 |    0.804 |      0.825 |
+| lightgbm-bge-small-default                                            |       0.870 |    0.783 |      0.816 |
+| lightgbm-bge-small-upsampled-dataset-default                          |       **0.876** |    0.819 |      **0.843** |
+| lightgbm-tfidf-class-weight-balanced                                  |       0.782 |    0.744 |      0.760 |
+| lightgbm-tfidf-class-weight-balanced-dart                             |       0.782 |    0.696 |      0.724 |
+| lightgbm-tfidf-class-weight-balanced-high-lr                          |       0.780 |    0.751 |      0.764 |
+| lightgbm-tfidf-default                                                |       0.769 |    0.677 |      0.704 |
+| lr-bge-small-upsampled-dataset-default                                |       0.767 |    **0.843** |      0.791 |
+| rf-bge-small-upsampled-dataset-default                                |       0.865 |    0.685 |      0.726 |
+| svc-bge-small-cleaned-dataset-default-prob                            |       0.874 |    0.766 |      0.804 |
+| svc-bge-small-upsampled-dataset-c0.5                                  |       0.772 |    0.827 |      0.792 |
+| svc-bge-small-upsampled-dataset-c0.8                                  |       0.781 |    0.832 |      0.801 |
+| svc-bge-small-upsampled-dataset-default-prob                          |       0.796 |    0.839 |      0.814 |
 
 
 This tabulated data provides a clear and concise comparison of model performances across different experiments, highlighting the effectiveness of different approaches in tackling the complexities of multi-label text classification.
