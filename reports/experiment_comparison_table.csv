@@ -1,0 +1,16 @@
+Experiment,Overall_F1_Score,Cyber_Label_F1_Score,Environmental_Issue_F1_Score
+lightgbm-bge-small-cleaned-dataset-class-weight-balanced,0.63,0.746,0.84
+lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-100estm,0.589,0.706,0.833
+lightgbm-bge-small-cleaned-dataset-class-weight-balanced-dart-400estm,0.608,0.738,0.825
+lightgbm-bge-small-default,0.588,0.726,0.816
+lightgbm-bge-small-upsampled-dataset-default,0.572,0.684,0.843
+lightgbm-tfidf-class-weight-balanced,0.599,0.779,0.76
+lightgbm-tfidf-class-weight-balanced-dart,0.513,0.724,0.724
+lightgbm-tfidf-class-weight-balanced-high-lr,0.6,0.777,0.764
+lightgbm-tfidf-default,0.494,0.726,0.704
+lr-bge-small-upsampled-dataset-default,0.566,0.689,0.791
+rf-bge-small-upsampled-dataset-default,0.372,0.59,0.726
+svc-bge-small-cleaned-dataset-default-prob,0.587,0.738,0.804
+svc-bge-small-upsampled-dataset-c0.5,0.608,0.744,0.792
+svc-bge-small-upsampled-dataset-c0.8,0.655,0.792,0.801
+svc-bge-small-upsampled-dataset-default-prob,0.672,0.801,0.814
