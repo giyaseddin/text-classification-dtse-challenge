@@ -14,7 +14,6 @@ Experiments and serving for Multi-label Text Classification Model
 - [Contact Information](#contact-information)
 
 ## Project Overview
-## Project Overview
 
 ### Objective
 The objective of this project is to develop a robust multi-label text classification model capable of accurately categorizing text into three distinct categories: cyber security, environmental issues, and others. This model aims to assist in automatically sorting texts based on their content, enhancing efficiency in content management and monitoring.
@@ -43,6 +42,9 @@ jupyter notebook
 ```
 this will open the window of the project in the browser, and find the related project folders there. Then you can find ipython notebooks under `notebooks`.
 
+Last step before start running the project is to copy the datasets `train.csv` and `test.csv` under the `./data/raw/` folder.
+
+[data-processing.ipynb](notebooks/data-processing.ipynb) is the starting point to generate the cleaned data, it will process them and save under `./data/processed/` folder.
 
 ## Workflow and Experiments
 The development of the classification models involved a series of structured steps, each building upon the insights and results of the previous:
