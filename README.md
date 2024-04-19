@@ -24,7 +24,7 @@ This project sits at the intersection of Natural Language Processing (NLP) and m
 The task is further complicated by common issues in text data, such as class imbalance where some categories are significantly underrepresented compared to others, ambiguous or overlapping class definitions, and the high dimensionality of textual data. Addressing these challenges requires careful design of data preprocessing, feature engineering, and the selection of appropriate modeling techniques that can effectively handle the nuances of multi-label text datasets.
 
 ## Installation and Setup
-- Dependencies: Different tools were used on the way of exploring the best model to train, so, libraries like: `scikit-learn`, `lightgbm`, `transformers` are included explicitly or implicitly in the `requirements.txt` file
+- Dependencies: Different tools were used on the way of exploring the best model to train, so, libraries like: `scikit-learn`, `lightgbm`, `transformers` are included explicitly or implicitly in the `requirements.txt` file. Environment is based on Python 3.11 inside an isolated conda environment.
 - Installation: It is enough to run the following command to install
 ```shell
 make requirements
